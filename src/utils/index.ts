@@ -9,7 +9,6 @@ import { NetworkInfo } from 'constants/networks';
 import JSBI from 'jsbi';
 import { ROUTER_ADDRESS } from '../constants';
 import { TokenAddressMap } from '../state/lists/hooks';
-import { OptimismNetworkInfo } from './../constants/networks';
 
 // returns the checksummed address if the address is valid, otherwise returns false
 export function isAddress(value: any): string | false {
@@ -26,26 +25,7 @@ export function getEtherscanLink(
     type: 'transaction' | 'token' | 'address' | 'block',
     networkVersion: NetworkInfo,
 ): string {
-    let prefix = 'https://evmexplorer.velas.com/';
-
-    if (networkVersion === OptimismNetworkInfo) {
-        prefix = 'https://optimistic.etherscan.io/'
-        switch (type) {
-            case 'transaction': {
-                return `${prefix}/tx/${data}`;
-            }
-            case 'token': {
-                return `${prefix}/address/${data}`;
-            }
-            case 'block': {
-                return `https://optimistic.etherscan.io`;
-            }
-            case 'address':
-            default: {
-                return `${prefix}/address/${data}`;
-            }
-        }
-    }
+    const prefix = 'https://evmexplorer.velas.com/';
 
     switch (type) {
         case 'transaction': {

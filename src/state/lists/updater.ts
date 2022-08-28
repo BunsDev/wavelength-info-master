@@ -1,5 +1,5 @@
 import { getVersionUpgrade, minVersionBump, VersionUpgrade } from '@uniswap/token-lists';
-import { OPTIMISM_LIST, UNSUPPORTED_LIST_URLS } from 'constants/lists';
+import { UNSUPPORTED_LIST_URLS } from 'constants/lists';
 import { useCallback, useEffect } from 'react';
 import { useAllLists } from 'state/lists/hooks';
 import { useFetchListCallback } from '../../hooks/useFetchListCallback';
@@ -24,8 +24,6 @@ export default function Updater(): null {
             fetchList(url).catch((error) => console.debug('interval list fetching error', error)),
         );
     }, [fetchList, isWindowVisible, lists]);
-
-    dispatch(enableList(OPTIMISM_LIST));
 
     // fetch all lists every 10 minutes, but only after we initialize library
     useInterval(fetchAllListsCallback, 1000 * 60 * 10);

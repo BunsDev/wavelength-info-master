@@ -24,8 +24,8 @@ import SwapsTable from '../../components/TransactionsTable/SwapsTable';
 import Loader, { LocalLoader } from '../../components/Loader';
 import { useTransformedVolumeData } from 'hooks/chart';
 import { useBalancerChainProtocolData } from 'data/balancer/useAggregatedProtocolData';
-import { FantomNetworkInfo, OptimismNetworkInfo } from 'constants/networks';
-import {optimismClient, optimismBlockClient, blockClient, client } from 'apollo/client';
+import { FantomNetworkInfo } from 'constants/networks';
+import { blockClient, client } from 'apollo/client';
 import StackedAreaChart from 'components/StackedAreaChart';
 import BarChartStacked from 'components/BarChartStacked';
 import getAggregatedProtocolChartData from 'utils/getAggregatedProtocolChartData';
@@ -47,21 +47,19 @@ export default function Protocol() {
 
     const [activeNetwork] = useActiveNetworkVersion();
     const protocolData = useBalancerChainProtocolData(FantomNetworkInfo.clientUri, FantomNetworkInfo.startTimeStamp, blockClient, client);
-    const protocolOptimismData = useBalancerChainProtocolData(OptimismNetworkInfo.clientUri, OptimismNetworkInfo.startTimeStamp, optimismBlockClient, optimismClient);
-
 
     //---Aggregated TVL Data---
     let aggregatedTVL:any[] = [];
     let  protocolTVL = 0;
     let protocolTVLChange = 0;
     //Create aggregate / stitched together TVL test:
-    if (protocolData.tvlData && protocolOptimismData.tvlData ) {
-        aggregatedTVL = getAggregatedProtocolChartData(protocolData.tvlData, protocolOptimismData.tvlData, NaN)
-        if (protocolData.tvl && protocolOptimismData.tvl) {
-            protocolTVL = protocolData.tvl + protocolOptimismData.tvl;
+    if (protocolData.tvlData ) {
+        aggregatedTVL = getAggregatedProtocolChartData(protocolData.tvlData,NaN)
+        if (protocolData.tvl) {
+            protocolTVL = protocolData.tvl;
         }
-        if (protocolData.tvlChange && protocolOptimismData.tvlChange) {
-            protocolTVLChange = protocolData.tvlChange + protocolOptimismData.tvlChange;
+        if (protocolData.tvlChange) {
+            protocolTVLChange = protocolData.tvlChange;
         }
     }
 
@@ -69,44 +67,40 @@ export default function Protocol() {
     let aggregatedVolume:any[] = [];
     let  protocolVolume = 0;
     let protocolVolumeChange = 0
-    if (protocolData.volumeData && protocolOptimismData.volumeData) {
-        aggregatedVolume = getAggregatedProtocolChartData(protocolData.volumeData, protocolOptimismData.volumeData, 0)
-        if (protocolData.volume24 && protocolOptimismData.volume24 ) {
-            protocolVolume = protocolData.volume24 + protocolOptimismData.volume24;
+    if (protocolData.volumeData) {
+        aggregatedVolume = getAggregatedProtocolChartData(protocolData.volumeData, 0)
+        if (protocolData.volume24 ) {
+            protocolVolume = protocolData.volume24;
         }
-        if (protocolData.volumeChange && protocolOptimismData.volumeChange) {
-            protocolVolumeChange = protocolData.volumeChange + protocolOptimismData.volumeChange;
+        if (protocolData.volumeChange) {
+            protocolVolumeChange = protocolData.volumeChange;
         }
     }
     let aggregatedWeeklyVolume:any[] = [];
     const weeklyVolumeData = useTransformedVolumeData(protocolData?.volumeData, 'week');
-    const weeklyOptimismVolumeData = useTransformedVolumeData(protocolOptimismData?.volumeData, 'week');
-
-    if (weeklyVolumeData && weeklyOptimismVolumeData) {
+    if (weeklyVolumeData) {
         //time, value, chainId
-        aggregatedWeeklyVolume = getAggregatedProtocolChartData(weeklyVolumeData, weeklyOptimismVolumeData, 0)
+        aggregatedWeeklyVolume = getAggregatedProtocolChartData(weeklyVolumeData, 0)
     }
 
     //---Aggregated Swaps data---
     let aggregatedSwaps:any[] = [];
     let  protocolSwaps = 0;
-    if (protocolData.swapData && protocolOptimismData.swapData) {
-        aggregatedSwaps = getAggregatedProtocolChartData(protocolData.swapData, protocolOptimismData.swapData, 0)
-        if (protocolData.swaps24 && protocolOptimismData.swaps24) {
-            protocolSwaps = protocolData.swaps24 + protocolOptimismData.swaps24;
+    if (protocolData.swapData) {
+        aggregatedSwaps = getAggregatedProtocolChartData(protocolData.swapData,0)
+        if (protocolData.swaps24) {
+            protocolSwaps = protocolData.swaps24;
         }
-        if (protocolData.swaps24 && protocolOptimismData.swaps24) {
-            protocolSwaps = protocolData.swaps24 + protocolOptimismData.swaps24;
+        if (protocolData.swaps24) {
+            protocolSwaps = protocolData.swaps24;
         }
     }
     let aggregatedWeeklySwaps:any[] = [];
     const weeklySwapData = useTransformedVolumeData(protocolData?.swapData, 'week');
-    const weeklyOptimismSwapData = useTransformedVolumeData(protocolOptimismData?.swapData, 'week');
 
-
-    if (weeklySwapData && weeklyOptimismSwapData) {
+    if (weeklySwapData) {
         //time, value, chainId
-        aggregatedWeeklySwaps = getAggregatedProtocolChartData(weeklySwapData, weeklyOptimismSwapData, 0)
+        aggregatedWeeklySwaps = getAggregatedProtocolChartData(weeklySwapData, 0)
     }
 
     //---Aggregated fee data
@@ -114,22 +108,20 @@ export default function Protocol() {
         let aggregatedFees:any[] = [];
         let  protocolFees = 0;
         let protocolFeesChange = 0;
-        if (protocolData.feeData && protocolOptimismData.feeData) {
-            aggregatedFees = getAggregatedProtocolChartData(protocolData.feeData, protocolOptimismData.feeData, 0)
-            if (protocolData.fees24 && protocolOptimismData.fees24) {
-                protocolFees = protocolData.fees24 + protocolOptimismData.fees24;
+        if (protocolData.feeData) {
+            aggregatedFees = getAggregatedProtocolChartData(protocolData.feeData, 0)
+            if (protocolData.fees24) {
+                protocolFees = protocolData.fees24;
             }
-            if (protocolData.feesChange && protocolOptimismData.feesChange) {
-                protocolFeesChange = protocolData.feesChange + protocolOptimismData.feesChange;
+            if (protocolData.feesChange) {
+                protocolFeesChange = protocolData.feesChange;
             }
         }
         let aggregatedWeeklyFees:any[] = [];
-        const weeklyFeeData = useTransformedVolumeData(protocolData?.feeData, 'week');
-        const weeklyOptimismFeeData = useTransformedVolumeData(protocolOptimismData?.feeData, 'week');
-    
-        if (weeklySwapData && weeklyOptimismFeeData) {
+        const weeklyFeeData = useTransformedVolumeData(protocolData?.feeData, 'week');    
+        if (weeklySwapData) {
             //time, value, chainId
-            aggregatedWeeklyFees = getAggregatedProtocolChartData(weeklyFeeData, weeklyOptimismFeeData, 0)
+            aggregatedWeeklyFees = getAggregatedProtocolChartData(weeklyFeeData, 0)
         }
     
 
@@ -179,13 +171,13 @@ export default function Protocol() {
             <ThemedBackgroundGlobal backgroundColor={'#7f7f7f'} />
             <AutoColumn gap="16px">
                 <TYPE.largeHeader>Beethoven-X: Protocol Overview</TYPE.largeHeader>
-                {weeklyVolumeData.length > 0 && weeklyOptimismVolumeData.length > 0 ?
+                {weeklyVolumeData.length > 0 ?
                 <ResponsiveRow>
                     <ChartWrapper>
                         <StackedAreaChart
                             data={aggregatedTVL}
-                            tokenSet={['Fantom', 'Optimism']}
-                            colorSet={[FantomNetworkInfo.primaryColor, OptimismNetworkInfo.primaryColor]}
+                            tokenSet={['Fantom']}
+                            colorSet={[FantomNetworkInfo.primaryColor]}
                             height={220}
                             minHeight={332}
                             color={activeNetwork.primaryColor}
@@ -204,15 +196,15 @@ export default function Protocol() {
                             }
                         />
                     </ChartWrapper>
-                    {protocolData.volumeData && protocolOptimismData.volumeData ?
+                    {protocolData.volumeData ?
                     <ChartWrapper>
                     <BarChartStacked
                             height={220}
                             minHeight={332}
                             data={aggregatedWeeklyVolume}
                             color={activeNetwork.primaryColor}
-                            tokenSet={['Fantom', 'Optimism']}
-                            colorSet={[FantomNetworkInfo.primaryColor, OptimismNetworkInfo.primaryColor]}
+                            tokenSet={['Fantom']}
+                            colorSet={[FantomNetworkInfo.primaryColor]}
                             isDollarAmount={true}
                             value={volumeHover}
                             label={rightLabel}
@@ -230,7 +222,7 @@ export default function Protocol() {
                         />
                     </ChartWrapper> : null }
                 </ResponsiveRow> : <Loader/> }
-                {weeklySwapData.length > 0 && weeklyOptimismSwapData.length > 0 ?
+                {weeklySwapData.length > 0 ?
                 <ResponsiveRow>
                 <ChartWrapper>
                 <BarChartStacked
@@ -238,8 +230,8 @@ export default function Protocol() {
                             minHeight={332}
                             data={aggregatedWeeklySwaps}
                             color={activeNetwork.primaryColor}
-                            tokenSet={['Fantom', 'Optimism']}
-                            colorSet={[FantomNetworkInfo.primaryColor, OptimismNetworkInfo.primaryColor]}
+                            tokenSet={['Fantom']}
+                            colorSet={[FantomNetworkInfo.primaryColor]}
                             value={swapsHover}
                             label={swapsLabel}
                             topLeft={
@@ -262,8 +254,8 @@ export default function Protocol() {
                             data={aggregatedWeeklyFees
                             }
                             color={activeNetwork.primaryColor}
-                            tokenSet={['Fantom', 'Optimism']}
-                            colorSet={[FantomNetworkInfo.primaryColor, OptimismNetworkInfo.primaryColor]}
+                            tokenSet={['Fantom']}
+                            colorSet={[FantomNetworkInfo.primaryColor]}
                             value={feesHover}
                             label={feesLabel}
                             topLeft={

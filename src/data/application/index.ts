@@ -51,8 +51,8 @@ export function useFetchedSubgraphStatus(): {
         variables: {
             name:
                 activeNetwork === FantomNetworkInfo
-                    ? 'publu/fantom-blocks'
-                    : 'danielmkm/optimism-blocks',
+                    ? ''
+                    : '',
         },
     });
 

@@ -1,6 +1,5 @@
 import { makeVar } from '@apollo/client';
 import { useActiveNetworkVersion } from 'state/application/hooks';
-import { OptimismNetworkInfo } from 'constants/networks';
 
 export interface TokenListToken {
     name: string;

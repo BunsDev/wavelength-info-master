@@ -48,9 +48,9 @@ export function useBalancerTokens(): TokenData[] {
         if (block24) {
             getTokenData({
                 variables: {
-                    block24: { number: parseInt(block24.number) }
+                    block24: { number: parseInt(block24.number) },
                     //block48: { number: parseInt(block48.number) },
-                  //  blockWeek: { number: parseInt(blockWeek.number) }
+                    blockWeek: { number: parseInt(blockWeek.number) }
                 },
                 context: {
                     uri: activeNetwork.clientUri,

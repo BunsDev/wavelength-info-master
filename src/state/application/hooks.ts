@@ -1,9 +1,7 @@
 import { ApolloClient, NormalizedCacheObject } from '@apollo/client'
 import {
   blockClient,
-  client,
-  optimismBlockClient,
-  optimismClient,
+  client
 } from 'apollo/client'
 import { NetworkInfo, SupportedNetwork } from 'constants/networks'
 import { useCallback, useMemo } from 'react'
@@ -124,8 +122,6 @@ export function useDataClient(): ApolloClient<NormalizedCacheObject> {
   switch (activeNetwork.id) {
     case SupportedNetwork.FANTOM:
       return client
-    case SupportedNetwork.OPTIMISM:
-      return optimismClient
     default:
       return client
   }
@@ -137,8 +133,6 @@ export function useBlockClient(): ApolloClient<NormalizedCacheObject> {
   switch (activeNetwork.id) {
     case SupportedNetwork.FANTOM:
       return blockClient
-    case SupportedNetwork.OPTIMISM:
-      return optimismBlockClient
     default:
       return blockClient
   }
