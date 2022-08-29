@@ -5,7 +5,7 @@ import { TYPE, ExternalLink } from '../../theme'
 import { useActiveNetworkVersion, useSubgraphStatus } from '../../state/application/hooks'
 import { getEtherscanLink } from '../../utils'
 import useTheme from 'hooks/useTheme'
-import { FantomNetworkInfo } from 'constants/networks'
+import { VelasNetworkInfo } from 'constants/networks'
 
 const StyledPolling = styled.div`
   display: flex;

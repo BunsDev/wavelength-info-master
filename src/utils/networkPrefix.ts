@@ -1,7 +1,7 @@
-import { FantomNetworkInfo, NetworkInfo } from 'constants/networks';
+import { VelasNetworkInfo, NetworkInfo } from 'constants/networks';
 
 export function networkPrefix(activeNewtork: NetworkInfo) {
-    const isEthereum = activeNewtork === FantomNetworkInfo;
+    const isEthereum = activeNewtork === VelasNetworkInfo;
     if (isEthereum) {
         return '/';
     }

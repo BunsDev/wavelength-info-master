@@ -16,4 +16,4 @@ export const BALANCER_APP_LOGO = process.env.REACT_APP_APP_LOGO || '';
 export const BALANCER_LOADING_IMAGE = process.env.REACT_APP_LOADING_IMAGE || '';
 export const BALANCER_SUBGRAPH_URL = process.env.REACT_APP_SUBGRAPH_URL || '';
 export const BALANCER_SUBGRAPH_OP_URL = process.env.REACT_APP_OP_SUBGRAPH_URL || '';
-export const BALANCER_FANTOM_BLOCK_SUBGRAPH = process.env.REACT_APP_BLOCKS_SUBGRAPH_URL || '';
+export const BALANCER_VELAS_BLOCK_SUBGRAPH = process.env.REACT_APP_BLOCKS_SUBGRAPH_URL || '';

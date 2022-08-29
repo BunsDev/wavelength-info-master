@@ -24,7 +24,7 @@ import SwapsTable from '../../components/TransactionsTable/SwapsTable';
 import Loader, { LocalLoader } from '../../components/Loader';
 import { useTransformedVolumeData } from 'hooks/chart';
 import { useBalancerChainProtocolData } from 'data/balancer/useAggregatedProtocolData';
-import { FantomNetworkInfo } from 'constants/networks';
+import { VelasNetworkInfo } from 'constants/networks';
 import { blockClient, client } from 'apollo/client';
 import StackedAreaChart from 'components/StackedAreaChart';
 import BarChartStacked from 'components/BarChartStacked';
@@ -46,7 +46,7 @@ export default function Protocol() {
     const theme = useTheme();
 
     const [activeNetwork] = useActiveNetworkVersion();
-    const protocolData = useBalancerChainProtocolData(FantomNetworkInfo.clientUri, FantomNetworkInfo.startTimeStamp, blockClient, client);
+    const protocolData = useBalancerChainProtocolData(VelasNetworkInfo.clientUri, VelasNetworkInfo.startTimeStamp, blockClient, client);
 
     //---Aggregated TVL Data---
     let aggregatedTVL:any[] = [];
@@ -170,14 +170,14 @@ export default function Protocol() {
         <PageWrapper>
             <ThemedBackgroundGlobal backgroundColor={'#7f7f7f'} />
             <AutoColumn gap="16px">
-                <TYPE.largeHeader>Beethoven-X: Protocol Overview</TYPE.largeHeader>
+                <TYPE.largeHeader>Wavelength: Protocol Overview</TYPE.largeHeader>
                 {weeklyVolumeData.length > 0 ?
                 <ResponsiveRow>
                     <ChartWrapper>
                         <StackedAreaChart
                             data={aggregatedTVL}
-                            tokenSet={['Fantom']}
-                            colorSet={[FantomNetworkInfo.primaryColor]}
+                            tokenSet={['Velas']}
+                            colorSet={[VelasNetworkInfo.primaryColor]}
                             height={220}
                             minHeight={332}
                             color={activeNetwork.primaryColor}
@@ -203,8 +203,8 @@ export default function Protocol() {
                             minHeight={332}
                             data={aggregatedWeeklyVolume}
                             color={activeNetwork.primaryColor}
-                            tokenSet={['Fantom']}
-                            colorSet={[FantomNetworkInfo.primaryColor]}
+                            tokenSet={['Velas']}
+                            colorSet={[VelasNetworkInfo.primaryColor]}
                             isDollarAmount={true}
                             value={volumeHover}
                             label={rightLabel}
@@ -230,8 +230,8 @@ export default function Protocol() {
                             minHeight={332}
                             data={aggregatedWeeklySwaps}
                             color={activeNetwork.primaryColor}
-                            tokenSet={['Fantom']}
-                            colorSet={[FantomNetworkInfo.primaryColor]}
+                            tokenSet={['Velas']}
+                            colorSet={[VelasNetworkInfo.primaryColor]}
                             value={swapsHover}
                             label={swapsLabel}
                             topLeft={
@@ -254,8 +254,8 @@ export default function Protocol() {
                             data={aggregatedWeeklyFees
                             }
                             color={activeNetwork.primaryColor}
-                            tokenSet={['Fantom']}
-                            colorSet={[FantomNetworkInfo.primaryColor]}
+                            tokenSet={['Velas']}
+                            colorSet={[VelasNetworkInfo.primaryColor]}
                             value={feesHover}
                             label={feesLabel}
                             topLeft={

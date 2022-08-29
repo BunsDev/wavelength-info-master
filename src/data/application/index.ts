@@ -2,7 +2,7 @@ import { useActiveNetworkVersion } from 'state/application/hooks';
 import { healthClient } from './../../apollo/client';
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
-import { FantomNetworkInfo } from 'constants/networks';
+import { VelasNetworkInfo } from 'constants/networks';
 
 export const SUBGRAPH_HEALTH = gql`
     query health($name: Bytes) {
@@ -50,7 +50,7 @@ export function useFetchedSubgraphStatus(): {
         fetchPolicy: 'network-only',
         variables: {
             name:
-                activeNetwork === FantomNetworkInfo
+                activeNetwork === VelasNetworkInfo
                     ? ''
                     : '',
         },

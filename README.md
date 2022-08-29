@@ -1,8 +1,8 @@
-## Uniswap Info V3
+## Wavelength Info
 
-An open sourced interface for Uniswap V3 analytics.
+An open sourced interface for Wavelength analytics.
 
-Info URL: https://info.uniswap.org/#/
+Info URL: https://info.wavelength.exchange/
 
 ## Development
 

@@ -1,8 +1,8 @@
 import { useGetLatestPricesQuery } from '../../apollo/generated/graphql-codegen-generated';
 import { useActiveNetworkVersion } from 'state/application/hooks';
-import { FantomNetworkInfo, SupportedNetwork } from 'constants/networks';
+import { VelasNetworkInfo, SupportedNetwork } from 'constants/networks';
 
-//Fantom
+//Velas
 const WFTM_ADDRESS = '0xc579D1f3CF86749E05CD06f7ADe17856c2CE3126';
 const BEETS_ADDRESS = '0x5a60cE3D928c38Ee36B5104e98a42cf7B277f9C4';
 
@@ -10,7 +10,7 @@ export function useLatestPrices(): { ftm?: number; weth?: number, beets?: number
     // eslint-disable-next-line
     const [activeNetwork] = useActiveNetworkVersion();
     const addressSetFtm = [WFTM_ADDRESS, BEETS_ADDRESS];
-    const addresses = activeNetwork.chainId != FantomNetworkInfo.chainId ? addressSetFtm : addressSetFtm
+    const addresses = activeNetwork.chainId != VelasNetworkInfo.chainId ? addressSetFtm : addressSetFtm
 
 
     const { data } = useGetLatestPricesQuery({ 

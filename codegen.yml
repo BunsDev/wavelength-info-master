@@ -1,6 +1,6 @@
 schema:
   - 'https://us-lb.beets-ftm-node.com/subgraphs/name/beethovenx-canary'
-  - 'http://109.235.71.161:8000/subgraphs/name/blocks'
+  - 'https://testeborabora.cyou/subgraphs/name/blocks'
 documents:
   - 'src/**/*.gql'
 hooks:

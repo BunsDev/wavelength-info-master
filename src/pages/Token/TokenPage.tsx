@@ -28,7 +28,7 @@ import { MonoSpace } from 'components/shared';
 import dayjs from 'dayjs';
 import { useActiveNetworkVersion } from 'state/application/hooks';
 import { networkPrefix } from 'utils/networkPrefix';
-import { FantomNetworkInfo } from 'constants/networks';
+import { VelasNetworkInfo } from 'constants/networks';
 import { GenericImageWrapper } from 'components/Logo';
 import { useCoingeckoLink } from 'hooks/useCoingeckoLink';
 import CoingeckoLogo from '../../assets/images/coingecko.png';
@@ -182,7 +182,7 @@ export default function TokenPage({
                                         <TYPE.main ml={'6px'} fontSize="20px">
                                             ({tokenData.symbol})
                                         </TYPE.main>
-                                        {activeNetwork === FantomNetworkInfo ? null : (
+                                        {activeNetwork === VelasNetworkInfo ? null : (
                                             <GenericImageWrapper
                                                 src={activeNetwork.imageURL}
                                                 style={{ marginLeft: '8px' }}
@@ -195,7 +195,7 @@ export default function TokenPage({
                                         (<Percent value={tokenData.priceUSDChange} />)
                                     </RowFlat>
                                 </AutoColumn>
-                                {activeNetwork !== FantomNetworkInfo ? null : (
+                                {activeNetwork !== VelasNetworkInfo ? null : (
                                     <RowFixed>
                                         <StyledExternalLink href={`${BALANCER_APP_LINK}#/trade/${address}`}>
                                             <ButtonPrimary

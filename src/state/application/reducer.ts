@@ -10,7 +10,7 @@ import {
     setOpenModal,
     updateActiveNetworkVersion,
 } from './actions';
-import { FantomNetworkInfo } from '../../constants/networks';
+import { VelasNetworkInfo } from '../../constants/networks';
 
 type PopupList = Array<{ key: string; show: boolean; content: PopupContent; removeAfterMs: number | null }>;
 
@@ -35,7 +35,7 @@ const initialState: ApplicationState = {
         syncedBlock: undefined,
         headBlock: undefined,
     },
-    activeNetworkVersion: FantomNetworkInfo,
+    activeNetworkVersion: VelasNetworkInfo,
 };
 
 export default createReducer(initialState, (builder) =>

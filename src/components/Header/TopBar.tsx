@@ -7,7 +7,7 @@ import Polling from './Polling';
 import { useLatestPrices } from '../../data/balancer/useLatestPrices';
 import { BALANCER_DOCS_LINK } from '../../data/balancer/constants';
 import { useActiveNetworkVersion } from 'state/application/hooks';
-import { FantomNetworkInfo } from 'constants/networks';
+import { VelasNetworkInfo } from 'constants/networks';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -31,10 +31,10 @@ const TopBar = () => {
         <Wrapper>
             <RowBetween>
                 <Polling />
-            { activeNetwork === FantomNetworkInfo ?
+            { activeNetwork === VelasNetworkInfo ?
                 <AutoRow gap="6px">
                     <RowFixed>
-                        <Item>FTM:</Item>
+                        <Item>VLX:</Item>
                         <Item fontWeight="700" ml="4px">
                             {formatDollarAmount(ftm)}
                         </Item>

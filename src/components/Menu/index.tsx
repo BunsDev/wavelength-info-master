@@ -80,7 +80,7 @@ const MenuItem = styled(ExternalLink)`
     }
 `;
 
-const CODE_LINK = 'https://github.com/Uniswap/uniswap-v3-info';
+const CODE_LINK = 'https://github.com/wavelength-velas/wavelength-info-master/';
 
 export default function Menu() {
     const node = useRef<HTMLDivElement>();
@@ -97,11 +97,11 @@ export default function Menu() {
 
             {open && (
                 <MenuFlyout>
-                    <MenuItem id="link" href="https://beets.fi/">
+                    <MenuItem id="link" href="https://wavelength.exchange">
                         <Info size={14} />
                         About
                     </MenuItem>
-                    <MenuItem id="link" href="https://docs.beethovenx.io/">
+                    <MenuItem id="link" href="https://docs.wavelength.exchange/">
                         <BookOpen size={14} />
                         Docs
                     </MenuItem>

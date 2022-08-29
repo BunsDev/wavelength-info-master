@@ -1,4 +1,4 @@
-import FANTOM_LOGO from '../assets/images/fantom.svg';
+import VELAS_LOGO from '../assets/images/velas.svg';
 import { 
     BALANCER_PRIMARY_COLOR, 
     BALANCER_SECONDARY_COLOR, 
@@ -8,7 +8,7 @@ import {
 } from '../data/balancer/constants';
 
 export enum SupportedNetwork {
-    FANTOM,
+    VELAS,
 }
 
 export type NetworkInfo = {
@@ -26,20 +26,20 @@ export type NetworkInfo = {
     blurb?: string
 };
 
-export const FantomNetworkInfo: NetworkInfo = {
-    id: SupportedNetwork.FANTOM,
-    chainId: '20250',
+export const VelasNetworkInfo: NetworkInfo = {
+    id: SupportedNetwork.VELAS,
+    chainId: '106',
     route: '',
-    name: 'Fantom',
+    name: 'Velas',
     startTimeStamp: BALANCER_SUBGRAPH_START_TIMESTAMP,
     appUri: BALANCER_APP_LINK,
     clientUri: BALANCER_SUBGRAPH_URL,
     bgColor: BALANCER_PRIMARY_COLOR,
     primaryColor: BALANCER_PRIMARY_COLOR,
     secondaryColor: BALANCER_SECONDARY_COLOR,
-    imageURL: FANTOM_LOGO,
+    imageURL: VELAS_LOGO,
 };
 
 export const SUPPORTED_NETWORK_VERSIONS: NetworkInfo[] = [
-    FantomNetworkInfo,
+    VelasNetworkInfo,
 ];

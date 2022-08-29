@@ -2,7 +2,7 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { 
     BALANCER_SUBGRAPH_URL, 
     BALANCER_SUBGRAPH_OP_URL,
-    BALANCER_FANTOM_BLOCK_SUBGRAPH
+    BALANCER_VELAS_BLOCK_SUBGRAPH
 } from '../data/balancer/constants';
 
 export const healthClient = new ApolloClient({
@@ -10,9 +10,9 @@ export const healthClient = new ApolloClient({
     cache: new InMemoryCache(),
 });
 
-//FANTOM
+//VELAS
 export const blockClient = new ApolloClient({
-    uri: BALANCER_FANTOM_BLOCK_SUBGRAPH,
+    uri: BALANCER_VELAS_BLOCK_SUBGRAPH,
     cache: new InMemoryCache(),
     queryDeduplication: true,
     defaultOptions: {
