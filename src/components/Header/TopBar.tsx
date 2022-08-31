@@ -33,12 +33,12 @@ const TopBar = () => {
                 <Polling />
             { activeNetwork === VelasNetworkInfo ?
                 <AutoRow gap="6px">
-                    <RowFixed>
+                  {/*  <RowFixed>
                         <Item>VLX:</Item>
                         <Item fontWeight="700" ml="4px">
                             {formatDollarAmount(ftm)}
                         </Item>
-                    </RowFixed>
+            </RowFixed>*/}
                     <RowFixed>
                         <Item>WAVE:</Item>
                         <Item fontWeight="700" ml="4px">

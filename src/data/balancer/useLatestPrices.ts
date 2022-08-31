@@ -10,9 +10,8 @@ export function useLatestPrices(): { ftm?: number; weth?: number, beets?: number
     // eslint-disable-next-line
     const [activeNetwork] = useActiveNetworkVersion();
     const addressSetFtm = [WFTM_ADDRESS, WAVE_ADDRESS];
-    const addresses = activeNetwork.chainId != VelasNetworkInfo.chainId ? addressSetFtm : addressSetFtm
-
-
+    const addresses = addressSetFtm
+    
     const { data } = useGetLatestPricesQuery({ 
         variables: { where: { asset_in: addresses } }, 
         context: {

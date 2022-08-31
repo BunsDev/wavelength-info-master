@@ -104,7 +104,7 @@ export default function Home() {
 
     return (
         <PageWrapper>
-            <ThemedBackgroundGlobal backgroundColor={activeNetwork.bgColor} />
+            <ThemedBackgroundGlobal backgroundColor={"#56799B"} />
             <AutoColumn gap="16px">
                 <TYPE.largeHeader>{activeNetwork.name} Overview</TYPE.largeHeader>
                 {protocolData?.volumeData.length > 0 ?
@@ -114,7 +114,7 @@ export default function Home() {
                             data={protocolData?.tvlData}
                             height={220}
                             minHeight={332}
-                            color={activeNetwork.primaryColor}
+                            color={"#FCB869"}
                             value={liquidityHover}
                             label={leftLabel}
                             setValue={setLiquidityHover}
@@ -143,7 +143,7 @@ export default function Home() {
                                   ? weeklyVolumeData
                                   : protocolData.volumeData
                               }
-                            color={activeNetwork.primaryColor}
+                            color={'#FCB869'}
                             setValue={setVolumeHover}
                             setLabel={setRightLabel}
                             value={volumeHover}
@@ -200,7 +200,7 @@ export default function Home() {
                                   ? weeklySwapData
                                   : protocolData.swapData
                               }
-                            color={activeNetwork.primaryColor}
+                            color={"#FCB869"}
                             setValue={setSwapsHover}
                             setLabel={setSwapsLabel}
                             value={swapsHover}
@@ -255,7 +255,7 @@ export default function Home() {
                                   : protocolData.feeData
                             
                             }
-                            color={activeNetwork.primaryColor}
+                            color={"#FCB869"}
                             setValue={setFeesHover}
                             setLabel={setFeesLabel}
                             value={feesHover}

@@ -123,7 +123,7 @@ const BarChartStacked = ({
                     dataKey={el} 
                     stackId="a" 
                     stroke={colorSet[tokenSet.indexOf(el)]} 
-                    fill={colorSet[tokenSet.indexOf(el)]} 
+                    fill={"#56799B"} 
                     strokeWidth={2}
                     shape={(props) => {
                         return (
@@ -132,7 +132,7 @@ const BarChartStacked = ({
                                 width={props.width}
                                 x={props.x}
                                 y={props.y}
-                                fill={colorSet[tokenSet.indexOf(el)]}
+                                fill={"#FCB869"}
                             />
                         );
                     }} 

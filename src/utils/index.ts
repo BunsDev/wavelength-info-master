@@ -25,7 +25,7 @@ export function getEtherscanLink(
     type: 'transaction' | 'token' | 'address' | 'block',
     networkVersion: NetworkInfo,
 ): string {
-    const prefix = 'https://evmexplorer.velas.com/';
+    const prefix = 'https://evmexplorer.velas.com';
 
     switch (type) {
         case 'transaction': {

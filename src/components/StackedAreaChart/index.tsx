@@ -118,7 +118,7 @@ const StackedAreaChart = ({
                     labelFormatter={(time) => dayjs(time).format('DD.MM.YY')}
                     />
                    {tokenSet.map((el) => 
-                    <Area key={el} fillOpacity={1} name={labelSet ? labelSet[tokenSet.indexOf(el)]: el} stackId="a" dataKey={el} type="monotone" stroke={colorSet[tokenSet.indexOf(el)]} fill={"url(#" + colorSet[tokenSet.indexOf(el)] + ")"} strokeWidth={2} />
+                    <Area key={el} fillOpacity={1} name={labelSet ? labelSet[tokenSet.indexOf(el)]: el} stackId="a" dataKey={el} type="monotone" stroke={colorSet[tokenSet.indexOf(el)]} fill={"url(#" + colorSet[tokenSet.indexOf(el)] + ")2"} strokeWidth={2} />
                     )}
                 </AreaChart>
             </ResponsiveContainer>

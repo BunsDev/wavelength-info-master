@@ -150,7 +150,7 @@ const Chart = ({
                     />
                     <Bar
                         dataKey="value"
-                        fill={color}
+                        fill={"#0037c0"}
                         shape={(props) => {
                             return (
                                 <CustomBar
