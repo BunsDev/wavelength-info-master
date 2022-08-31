@@ -183,13 +183,33 @@ export const TYPE = {
 };
 
 export const FixedGlobalStyle = createGlobalStyle`
+@font-face {
+    font-family: '../assets/css/fonts/GraphikLight.otf';
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: '../assets/css/fonts/GraphikMedium.ot';
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: '../assets/css/fonts/GraphikMedium.ot';
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
 html, input, textarea, button {
-  font-family: 'Inter', sans-serif;
+  font-family: '../assets/css/fonts/GraphikMedium.ot';
   font-display: fallback;
 }
 @supports (font-variation-settings: normal) {
   html, input, textarea, button {
-    font-family: 'Inter var', sans-serif;
+    font-family: '../assets/css/fonts/GraphikMedium.ot';
   }
 }
 

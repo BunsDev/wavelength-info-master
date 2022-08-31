@@ -97,7 +97,7 @@ const LineChart = ({
                 layout: {
                     backgroundColor: 'transparent',
                     textColor: '#565A69',
-                    fontFamily: 'Inter var',
+                    fontFamily: '../../../assets/css/fonts/GraphikBold.otf'
                 },
                 rightPriceScale: {
                     scaleMargins: {

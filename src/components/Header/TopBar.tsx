@@ -40,7 +40,7 @@ const TopBar = () => {
                         </Item>
                     </RowFixed>
                     <RowFixed>
-                        <Item>BEETS:</Item>
+                        <Item>WAVE:</Item>
                         <Item fontWeight="700" ml="4px">
                             {formatDollarAmount(beets)}
                         </Item>
@@ -54,7 +54,7 @@ const TopBar = () => {
                                     </Item>
                                 </RowFixed>
                                 <RowFixed>
-                                    <Item>BEETS:</Item>
+                                    <Item>WAVE:</Item>
                                     <Item fontWeight="700" ml="4px">
                                         {formatDollarAmount(beets)}
                                     </Item>
