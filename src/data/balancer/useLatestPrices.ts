@@ -4,7 +4,7 @@ import { VelasNetworkInfo, SupportedNetwork } from 'constants/networks';
 
 //Velas
 const WFTM_ADDRESS = '0xc579D1f3CF86749E05CD06f7ADe17856c2CE3126';
-const WAVE_ADDRESS = '0x5a60cE3D928c38Ee36B5104e98a42cf7B277f9C4';
+const WAVE_ADDRESS = '0x895b7291D540005e8ED2aEF696A89143CFaC517D';
 
 export function useLatestPrices(): { ftm?: number; weth?: number, beets?: number, bal?: number, op?: number} {
     // eslint-disable-next-line
