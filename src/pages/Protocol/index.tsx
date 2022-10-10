@@ -177,10 +177,10 @@ export default function Protocol() {
                         <StackedAreaChart
                             data={aggregatedTVL}
                             tokenSet={['Velas']}
-                            colorSet={["#FCB869"]}
+                            colorSet={["#ff0200"]}
                             height={220}
                             minHeight={332}
-                            color={"#FCB869"}
+                            color={"#ff0200"}
                             value={liquidityHover}
                             label={leftLabel}
                             topLeft={

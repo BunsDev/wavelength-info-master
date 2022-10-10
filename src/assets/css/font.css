@@ -1,22 +1,22 @@
   @font-face {
-    font-family: 'Graphik';
-    src: url('../fonts/GraphikLight.otf') format('opentype');
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Light.ttf') format('opentype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
   }
   
   @font-face {
-    font-family: 'Graphik';
-    src: url('../fonts/GraphikMedium.otf') format('opentype');
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Medium.ttf') format('opentype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
   }
   
   @font-face {
-    font-family: 'Graphik';
-    src: url('../fonts/GraphikBold.otf') format('opentype');
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Bold.ttf') format('opentype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;

@@ -25,6 +25,8 @@ const Wrapper = styled(Card)`
   }
 `;
 
+
+
 const CustomBar = ({
     x,
     y,
@@ -39,8 +41,9 @@ const CustomBar = ({
     fill: string;
 }) => {
     return (
+       
         <g>
-            <rect x={x} y={y} fill={fill} width={width} height={height} rx="2" />
+            <rect x={x} y={y} fill={'#ff0200'} width={width} height={height} rx="2" />
         </g>
     );
 };
