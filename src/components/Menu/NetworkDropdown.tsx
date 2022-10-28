@@ -97,7 +97,7 @@ export default function NetworkDropdown() {
                     <LogoWrapper src={activeNetwork.imageURL} />
                     <TYPE.main
                         fontSize="14px"
-                        color={theme.black}
+                        color={theme.white}
                         ml="8px"
                         mt="-2px"
                         mr="2px"

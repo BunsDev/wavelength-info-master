@@ -114,7 +114,7 @@ export default function Home() {
                             data={protocolData?.tvlData}
                             height={220}
                             minHeight={332}
-                            color={"#1e0577"}
+                            color={"#4729ae"}
                             value={liquidityHover}
                             label={leftLabel}
                             setValue={setLiquidityHover}
@@ -143,7 +143,7 @@ export default function Home() {
                                   ? weeklyVolumeData
                                   : protocolData.volumeData
                               }
-                            color={'#1e0577'}
+                            color={'#4729ae'}
                             setValue={setVolumeHover}
                             setLabel={setRightLabel}
                             value={volumeHover}
@@ -200,7 +200,7 @@ export default function Home() {
                                   ? weeklySwapData
                                   : protocolData.swapData
                               }
-                            color={"#1e0577"}
+                            color={"#4729ae"}
                             setValue={setSwapsHover}
                             setLabel={setSwapsLabel}
                             value={swapsHover}
@@ -255,7 +255,7 @@ export default function Home() {
                                   : protocolData.feeData
                             
                             }
-                            color={"#1e0577c"}
+                            color={"#4729aec"}
                             setValue={setFeesHover}
                             setLabel={setFeesLabel}
                             value={feesHover}
