@@ -166,15 +166,8 @@ export default function Header() {
                     </UniIcon>
                 </Title>
                 <HeaderLinks>
-                <StyledNavLink
-                        id={`pool-nav-link`}
-                        to={networkPrefix(activeNewtork)}
-                        isActive={(match, { pathname }) => pathname === '/'}
-                    >
-                        Protocol
-                    </StyledNavLink>
-                    <StyledNavLink id={`stake-nav-link`} to={networkPrefix(activeNewtork) + 'chain'}>
-                        Chain
+                    <StyledNavLink id={`stake-nav-link`} to={networkPrefix(activeNewtork)} isActive={(match, { pathname }) => pathname === '/'}>
+                        Home
                     </StyledNavLink>
                     <StyledNavLink id={`stake-nav-link`} to={networkPrefix(activeNewtork) + 'pools'}>
                         Pools

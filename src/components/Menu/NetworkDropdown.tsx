@@ -97,7 +97,7 @@ export default function NetworkDropdown() {
                     <LogoWrapper src={activeNetwork.imageURL} />
                     <TYPE.main
                         fontSize="14px"
-                        color={theme.white}
+                        color={theme.black}
                         ml="8px"
                         mt="-2px"
                         mr="2px"
@@ -110,44 +110,8 @@ export default function NetworkDropdown() {
                             L2
                         </Badge>
                     )}
-                    <ChevronDown size="20px" />
                 </RowFixed>
             </Wrapper>
-            {showMenu && (
-                <FlyOut>
-                    <AutoColumn gap="16px">
-                        <TYPE.main color={theme.text3} fontWeight={600} fontSize="16px">
-                            Select network
-                        </TYPE.main>
-                        {SUPPORTED_NETWORK_VERSIONS.map((n) => {
-                            return (
-                                <StyledInternalLink
-                                    key={n.id}
-                                    to={`${n === VelasNetworkInfo ? '' : '/' + n.route}/chain`}
-                                >
-                                    <NetworkRow
-                                        onClick={() => {
-                                            setShowMenu(false);
-                                        }}
-                                        active={activeNetwork.id === n.id}
-                                    >
-                                        <RowFixed>
-                                            <LogaContainer>
-                                                <LogoWrapper src={n.imageURL} />
-                                                {activeNetwork.id === n.id && <GreenDot />}
-                                            </LogaContainer>
-                                            <TYPE.main ml="12px" color={theme.white}>
-                                                {n.name}
-                                            </TYPE.main>
-                                        </RowFixed>
-                                        {n.blurb && <Badge>{n.blurb}</Badge>}
-                                    </NetworkRow>
-                                </StyledInternalLink>
-                            );
-                        })}
-                    </AutoColumn>
-                </FlyOut>
-            )}
         </Container>
     );
 }

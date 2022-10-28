@@ -109,7 +109,7 @@ export default function Menu() {
                         <Code size={14} />
                         Github
                     </MenuItem>
-                    <MenuItem id="link" href="https://discord.gg/jedS4zGk28">
+                    <MenuItem id="link" href="https://discord.gg/qcVxqsG7hB">
                         <MessageCircle size={14} />
                         Discord
                     </MenuItem>

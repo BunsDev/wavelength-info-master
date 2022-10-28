@@ -39,12 +39,7 @@ const TopBar = () => {
                             {formatDollarAmount(ftm)}
                         </Item>
             </RowFixed>*/}
-                    <RowFixed>
-                        <Item>WAVE:</Item>
-                        <Item fontWeight="700" ml="4px">
-                            {formatDollarAmount(beets)}
-                        </Item>
-                    </RowFixed>
+                    
                 </AutoRow> : 
                                 <AutoRow gap="6px">
                                 <RowFixed>

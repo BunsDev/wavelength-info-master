@@ -69,7 +69,7 @@ export default function Polling() {
   const [status] = useSubgraphStatus()
   const [isMounted, setIsMounted] = useState(true)
   const latestBlock = status.syncedBlock
-
+ console.log("LATESTBLOCK: "+latestBlock)
   useEffect(
     () => {
       const timer1 = setTimeout(() => setIsMounted(true), 1000)

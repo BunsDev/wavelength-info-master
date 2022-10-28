@@ -103,7 +103,7 @@ export default function App() {
         const [loading, setLoading] = useState(true);
         useEffect(() => {
             setTimeout(() => setLoading(false), 1300);
-            loadTokenListTokens(apiEndpoint).catch();
+            loadTokenListTokens("https://raw.githubusercontent.com/wavelength-velas/assets/main/generated/wavelength.tokenlist2.json").catch();
         }, [apiEndpoint]);
 
 
@@ -145,9 +145,7 @@ export default function App() {
                                 </WarningBanner>
                             </WarningWrapper>
                         )}
-                        <Hide1080>
-                            <TopBar />
-                        </Hide1080>
+                      
                         <Header />
                     </HeaderWrapper>
                     {subgraphStatus.available === false ? (
@@ -170,7 +168,7 @@ export default function App() {
                             <Switch>
                                 <Route exact strict path="/:networkID?/pools/:poolId" component={PoolPage} />
                                 <Route exact strict path="/:networkID?/pools" component={PoolsOverview} />
-                                <Route exact strict path="/:networkID?/chain" component={Home} />
+                                <Route exact strict path="/:networkID?/" component={Home} />
                                 <Route
                                     exact
                                     strict
